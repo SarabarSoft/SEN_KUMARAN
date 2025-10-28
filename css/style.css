@@ -131,7 +131,7 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link  {
+    .navbar-light .navbar-nav .nav-link {
         margin-left: 0;
         padding: 10px 0;
     }
@@ -187,7 +187,7 @@ h6,
     background-size: cover;
 }
 
-.service-item div {
+/* .service-item div {
     z-index: 1;
 }
 
@@ -210,6 +210,40 @@ h6,
 
 .service-item * {
     transition: .5s;
+}
+
+.service-item:hover * {
+    color: var(--light) !important;
+} */
+
+
+/* Fixed hover background & color for all service cards */
+.service-item {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.service-item::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--primary);
+    border-radius: 2px;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.service-item:hover::after {
+    width: 100%;
+}
+
+.service-item * {
+    transition: color 0.4s ease;
 }
 
 .service-item:hover * {
@@ -280,4 +314,75 @@ h6,
     border: 13px solid;
     border-color: transparent #D34351 #D34351 transparent;
     z-index: -1;
+}
+
+/* Equal height & alignment for all service cards */
+.service-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.row.g-5>[class*='col-'] {
+    display: flex;
+}
+
+@media (max-width: 991px) {
+    .service-item {
+        margin-bottom: 20px;
+    }
+}
+
+.modal {
+    z-index: 2000;
+}
+
+footer,
+.bg-dark,
+.bg-primary {
+    position: relative;
+    z-index: 1;
+}
+
+body.modal-open {
+    overflow: hidden !important;
+    padding-right: 0 !important;
+}
+
+
+/* Footer alignment fix */
+.bg-dark .row.g-5>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.bg-dark p,
+.bg-dark a,
+.bg-dark h3 {
+    word-wrap: break-word;
+}
+
+.bg-dark .d-flex {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+    .bg-dark .text-md-end {
+        text-align: center !important;
+    }
+}
+
+.bg-primary .row.g-5 {
+    align-items: center;
+}
+
+.bg-primary p {
+    margin-bottom: 0;
+}
+
+body.modal-open {
+    padding-right: 0 !important;
 }
