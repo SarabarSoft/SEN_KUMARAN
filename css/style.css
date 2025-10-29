@@ -102,12 +102,18 @@ h6,
     padding: 20px 0;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
+/* .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary);
+} */
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #224294 !important;
 }
 
-@media (min-width: 992px) {
+
+/* @media (min-width: 992px) {
     .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
         content: "";
@@ -128,7 +134,30 @@ h6,
     .navbar-light .navbar-nav .nav-link.nav-contact::before {
         display: none;
     }
+} */
+@media (min-width: 992px) {
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        bottom: 0;
+        left: 50%;
+        background: #224294;
+        transition: .5s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: 100%;
+        left: 0;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
 }
+
 
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link {
@@ -183,8 +212,12 @@ h6,
     height: 45px;
 }
 
-.hero-header {
+/* .hero-header {
     background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/carousel-1.jpg) top right no-repeat;
+    background-size: cover;
+} */
+.hero-header {
+    background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/banner_img.jpg) top right no-repeat;
     background-size: cover;
 }
 
@@ -226,6 +259,7 @@ h6,
     transition: all 0.4s ease;
 }
 
+/* Service card hover background color */
 .service-item::after {
     position: absolute;
     content: "";
@@ -233,7 +267,8 @@ h6,
     height: 100%;
     top: 0;
     left: 0;
-    background: var(--primary);
+    background: #224294;
+    /* new hover color */
     border-radius: 2px;
     z-index: -1;
     transition: width 0.4s ease;
@@ -243,13 +278,18 @@ h6,
     width: 100%;
 }
 
+.service-item:hover * {
+    color: #ffffff !important;
+}
+
+
 .service-item * {
     transition: color 0.4s ease;
 }
 
-.service-item:hover * {
+/* .service-item:hover * {
     color: var(--light) !important;
-}
+} */
 
 .bg-offer {
     background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/carousel-2.jpg) top right no-repeat;
@@ -276,7 +316,8 @@ h6,
 
 .testimonial-carousel .owl-dot.active {
     height: 45px;
-    background: var(--primary);
+    /* background: var(--primary); */
+    background: #224294 !important;
 }
 
 .testimonial-carousel .owl-item .testimonial-text,
@@ -285,7 +326,8 @@ h6,
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text {
-    background: var(--primary) !important;
+    /* background: var(--primary) !important; */
+    background: #224294 !important;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text * {
@@ -386,4 +428,54 @@ body.modal-open {
 
 body.modal-open {
     padding-right: 0 !important;
+}
+
+/* ===== Custom Modal Styling ===== */
+.modal-header {
+    background-color: #224294 !important;
+}
+
+.modal-header .modal-title {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+    /* makes close icon white */
+}
+
+/* Bottom close button */
+.modal-footer .btn[data-bs-dismiss="modal"] {
+    background-color: #DC1D25 !important;
+    color: #fff !important;
+    border: none;
+}
+
+.modal-footer .btn[data-bs-dismiss="modal"]:hover {
+    background-color: #b71a1f !important;
+    /* darker red hover */
+}
+/* === ICON COLOR CHANGE (Default Red → Hover White) === */
+.service-item img {
+    display: block;
+    margin: 0 auto 15px auto; /* centers horizontally + adds bottom margin */
+    width: 80px;
+    height: 80px;
+    filter: brightness(0) saturate(100%) invert(15%) sepia(87%) saturate(7489%) hue-rotate(353deg) brightness(93%) contrast(96%);
+    transition: filter 0.4s ease;
+}
+
+.service-item:hover img {
+    filter: brightness(0) invert(1);
+}
+.gradient-text {
+    background: linear-gradient(90deg, #DC1D25, #224294);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    text-decoration: none;
+}
+.gradient-text:hover {
+    opacity: 0.8;
 }
