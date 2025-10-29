@@ -479,3 +479,17 @@ body.modal-open {
 .gradient-text:hover {
     opacity: 0.8;
 }
+
+/* === Back to Top Button Custom Colors === */
+.back-to-top {
+    background-color:  #DC1D25 !important; /* Default Red */
+    color: #ffffff !important;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #224294 !important; /* Hover Blue */
+    color: #ffffff !important;
+}
+
