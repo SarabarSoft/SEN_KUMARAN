@@ -216,9 +216,56 @@ h6,
     background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/carousel-1.jpg) top right no-repeat;
     background-size: cover;
 } */
-.hero-header {
+/* .hero-header {
     background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/banner_img.jpg) top right no-repeat;
     background-size: cover;
+} */
+.hero-header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ✅ Show full image proportionally */
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 100vh;
+    /* prevent image from exceeding screen */
+}
+
+/* ✅ Text perfectly centered */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+/* ✅ Optional overlay for better text visibility */
+.hero-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    /* light overlay */
+    z-index: 0;
+}
+
+/* ✅ Fix for very tall/narrow screens like Galaxy Fold */
+@media (max-aspect-ratio: 3/4) {
+    .hero-img {
+        height: auto;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 }
 
 /* .service-item div {
@@ -389,6 +436,54 @@ footer,
     z-index: 1;
 }
 
+/* === Footer Customization === */
+footer .bg-dark {
+    background-color: #120F2D !important;
+    /* dark navy background */
+    color: #ffffff;
+}
+
+footer .bg-primary {
+    background: linear-gradient(90deg, #224294, #DC1D25) !important;
+    /* gradient blue→red */
+    color: #ffffff !important;
+    border: none;
+}
+
+/* Fix footer container width */
+footer .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    margin: 0 auto !important;
+}
+
+/* Ensure social media icons stay white */
+footer .btn.btn-lg-square i {
+    color: #fff !important;
+}
+
+/* Hover effect for icons */
+footer .btn.btn-lg-square:hover {
+    background: linear-gradient(135deg, #224294, #DC1D25) !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+/* Footer links */
+footer a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+
+
 body.modal-open {
     overflow: hidden !important;
     padding-right: 0 !important;
@@ -456,10 +551,12 @@ body.modal-open {
     background-color: #b71a1f !important;
     /* darker red hover */
 }
+
 /* === ICON COLOR CHANGE (Default Red → Hover White) === */
 .service-item img {
     display: block;
-    margin: 0 auto 15px auto; /* centers horizontally + adds bottom margin */
+    margin: 0 auto 15px auto;
+    /* centers horizontally + adds bottom margin */
     width: 80px;
     height: 80px;
     filter: brightness(0) saturate(100%) invert(15%) sepia(87%) saturate(7489%) hue-rotate(353deg) brightness(93%) contrast(96%);
@@ -469,6 +566,7 @@ body.modal-open {
 .service-item:hover img {
     filter: brightness(0) invert(1);
 }
+
 .gradient-text {
     background: linear-gradient(90deg, #DC1D25, #224294);
     -webkit-background-clip: text;
@@ -476,20 +574,371 @@ body.modal-open {
     font-weight: 600;
     text-decoration: none;
 }
+
 .gradient-text:hover {
     opacity: 0.8;
 }
 
 /* === Back to Top Button Custom Colors === */
 .back-to-top {
-    background-color:  #DC1D25 !important; /* Default Red */
+    background-color: #DC1D25 !important;
+    /* Default Red */
     color: #ffffff !important;
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .back-to-top:hover {
-    background-color: #224294 !important; /* Hover Blue */
+    background-color: #224294 !important;
     color: #ffffff !important;
+}
+
+
+
+.custom-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 6px 12px;
+    gap: 6px;
+}
+
+/* ---------- Brand Section ---------- */
+.custom-navbar .brand-area {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-width: 0;
+}
+
+.custom-navbar .logo-img {
+    height: 55px;
+    object-fit: contain;
+}
+
+.custom-navbar .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    min-width: 0;
+}
+
+.custom-navbar .brand-title {
+    font-size: clamp(1.4rem, 2vw + 0.5rem, 2.1rem) !important;
+    font-weight: 700;
+    white-space: normal;
+    word-break: break-word;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.2;
+}
+
+.custom-navbar .brand-subtitle {
+    font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem) !important;
+    color: #555;
+}
+
+/* ---------- Menu Section ---------- */
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Jost', sans-serif;
+    position: relative;
+    margin-left: 30px;
+    padding: 30px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+/* Move Home menu slightly left */
+.navbar-light .navbar-nav {
+    margin-left: -10px;
+}
+
+/* ---------- Contact Button ---------- */
+.nav-contact {
+    background-color: #DC1D25 !important;
+    color: #fff !important;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Icon default white */
+.nav-contact i {
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect: only icon turns blue */
+.nav-contact:hover {
+    background-color: #DC1D25 !important;
+    color: #fff !important;
+}
+
+.nav-contact:hover i {
+    color: #224294 !important;
+}
+
+
+/* ---------- QR Code ---------- */
+.custom-navbar .qr-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.custom-navbar .qr-box img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+
+
+/* Tablets */
+@media (max-width: 991.98px) {
+    .custom-navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .custom-navbar .brand-area {
+        justify-content: center;
+    }
+
+    .navbar-nav {
+        margin-left: 0 !important;
+    }
+
+    .custom-navbar .nav-contact {
+        margin-top: 6px;
+    }
+
+    .custom-navbar .qr-box {
+        margin-top: 8px;
+    }
+
+    .custom-navbar .qr-box img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+/* Small Mobiles */
+@media (max-width: 575.98px) {
+    .custom-navbar {
+        padding: 8px;
+    }
+
+    .custom-navbar .logo-img {
+        height: 45px;
+    }
+
+    .custom-navbar .brand-title {
+        font-size: 1.1rem;
+        /* slightly bigger logo text on small devices */
+    }
+
+    .custom-navbar .brand-subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* Show QR neatly below everything on mobile */
+    .custom-navbar .qr-box {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 6px;
+    }
+
+    .custom-navbar .qr-box img {
+        height: 65px;
+    }
+
+    .navbar-toggler {
+        margin-left: auto !important;
+        margin-right: 15px !important;
+        order: 3;
+        position: relative;
+        z-index: 1000;
+    }
+
+}
+
+/* ==== Team Section Fix ==== */
+.team-item {
+    overflow: visible;
+    /* Prevent icons from being cut off */
+    border-radius: 0;
+    /* Remove rounded corners */
+    transition: all 0.4s ease;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.team-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Team Image should stay clean */
+.team-item img {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    /* No top curve */
+}
+
+/* Social icons container */
+.team-item .position-absolute {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #fff;
+    padding: 6px;
+    border-radius: 0;
+    /* ⬅️ remove rounded background box */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Social media icons */
+.team-social .btn-square {
+    width: 38px;
+    height: 38px;
+    border-radius: 0 !important;
+    /* ⬅️ make icons fully square */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #224294;
+    /* Default border blue */
+    background: #fff;
+    color: #224294;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect — gradient fill, white icon */
+.team-social .btn-square:hover {
+    background: linear-gradient(135deg, #224294, #DC1D25);
+    border-color: transparent;
+    color: #fff;
+}
+
+/* Team member info box (Full Name & Designation) */
+.team-member-info {
+    background-color: #224294 !important;
+    /* Custom dark blue */
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 !important;
+    /* No rounded corners */
+}
+
+.team-member-info h3,
+.team-member-info p {
+    color: #fff !important;
+    margin: 0;
+}
+
+.row.g-4.g-lg-5.justify-content-center {
+    margin-top: 0 !important;
+}
+
+
+
+/* === Fix Contact Page Responsiveness === */
+
+/* Make contact box full width on small devices */
+@media (max-width: 768px) {
+    .contact .bg-light {
+        padding: 20px !important;
+    }
+
+    .contact iframe {
+        height: 300px !important;
+    }
+
+    .contact .d-flex {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .contact .d-flex i {
+        margin-bottom: 10px;
+    }
+
+    .contact .text-start {
+        text-align: left !important;
+    }
+
+    .contact .col-lg-6 {
+        width: 100% !important;
+    }
+
+    /* Ensure Google Map iframe stays inside screen */
+    iframe.position-relative {
+        width: 100% !important;
+        height: 300px !important;
+        border-radius: 8px;
+    }
+}
+
+/* ─── Tally Partner Badge ─── */
+.tally-fixed-badge {
+  position: fixed;
+  right: 45px;         /* same as back-to-top */
+  bottom: 115px;       /* perfectly above back-to-top */
+  z-index: 60;         /* just below back-to-top button */
+  width: 60px;
+  text-align: center;
+  padding: 8px 4px;
+  transition: all 0.3s ease;
+}
+
+.tally-fixed-badge img {
+  width: 60px;
+  height: auto;
+}
+
+/* Hover Effect */
+.tally-fixed-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .tally-fixed-badge {
+    display: block;
+    right: 20px;       /* closer to screen edge */
+    bottom: 90px;      /* just above back-to-top */
+    width: 80px;       /* smaller size for mobile */
+    padding: 8px;
+  }
+
+  .tally-fixed-badge img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tally-fixed-badge span {
+    font-size: 9px;
+  }
 }
 
