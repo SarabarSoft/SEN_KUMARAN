@@ -140,8 +140,8 @@ h6,
         position: absolute;
         content: "";
         width: 0;
-        height: 3px;
-        bottom: 6px;
+        height: 5px;
+        bottom: 0;
         left: 50%;
         background: #224294;
         transition: .5s;
@@ -594,15 +594,15 @@ body.modal-open {
 }
 
 
+
 .custom-navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2px 12px;  
-    gap: 4px;           
+    padding: 6px 12px;
+    gap: 6px;
 }
-
 
 /* ---------- Brand Section ---------- */
 .custom-navbar .brand-area {
@@ -614,7 +614,7 @@ body.modal-open {
 }
 
 .custom-navbar .logo-img {
-    height: 48px;
+    height: 55px;
     object-fit: contain;
 }
 
@@ -645,7 +645,7 @@ body.modal-open {
     font-family: 'Jost', sans-serif;
     position: relative;
     margin-left: 30px;
-    padding: 10px 0; 
+    padding: 30px 0;
     font-size: 22px;
     font-weight: 600;
     color: var(--dark);
@@ -658,57 +658,35 @@ body.modal-open {
     margin-left: -10px;
 }
 
-
 /* ---------- Contact Button ---------- */
 .nav-contact {
-    background-color: #224294 !important; /* Blue background */
-    color: #ffffff !important;            /* White text */
-    border-radius: 8px !important;        /* Smooth corners */
+    background-color: #DC1D25 !important;
+    color: #fff !important;
+    border-radius: 6px;
     font-weight: 600;
-    display: inline-flex !important;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 6px;
-    padding: 6px 14px !important;
-    font-size: 0.9rem;
-    line-height: 1.2;
-    text-align: center;
+    padding: 6px 12px;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
-    text-decoration: none !important;
 }
 
-/* Icon */
+/* Icon default white */
 .nav-contact i {
-    color: #ffffff !important; /* White icon */
-    font-size: 1rem;
-    transition: transform 0.3s ease;
+    color: #fff !important;
+    transition: color 0.3s ease;
 }
 
-/* Hover: keep text white, slightly darker blue background */
+/* Hover effect: only icon turns blue */
 .nav-contact:hover {
-    background-color: #1b357a !important; /* Darker blue */
-    color: #ffffff !important;            /* Keep text white */
-    transform: translateY(-2px);
+    background-color: #DC1D25 !important;
+    color: #fff !important;
 }
 
 .nav-contact:hover i {
-    color: #ffffff !important;            /* Keep icon white */
-    transform: scale(1.1);
+    color: #224294 !important;
 }
-
-/* ---------- Mobile Responsive ---------- */
-@media (max-width: 991.98px) {
-  .nav-item .nav-contact {
-    margin: 8px auto !important;
-    display: flex !important;
-    justify-content: center;
-    border-radius: 10px !important;
-  }
-}
-
-
-
-
 
 
 /* ---------- QR Code ---------- */
@@ -924,72 +902,43 @@ body.modal-open {
 
 /* ─── Tally Partner Badge ─── */
 .tally-fixed-badge {
-    position: fixed;
-    right: 45px;
-    /* same as back-to-top */
-    bottom: 115px;
-    /* perfectly above back-to-top */
-    z-index: 60;
-    /* just below back-to-top button */
-    width: 60px;
-    text-align: center;
-    padding: 8px 4px;
-    transition: all 0.3s ease;
+  position: fixed;
+  right: 45px;         /* same as back-to-top */
+  bottom: 115px;       /* perfectly above back-to-top */
+  z-index: 60;         /* just below back-to-top button */
+  width: 60px;
+  text-align: center;
+  padding: 8px 4px;
+  transition: all 0.3s ease;
 }
 
 .tally-fixed-badge img {
-    width: 60px;
-    height: auto;
+  width: 60px;
+  height: auto;
 }
 
 /* Hover Effect */
 .tally-fixed-badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 768px) {
-    .tally-fixed-badge {
-        display: block;
-        right: 20px;
-        /* closer to screen edge */
-        bottom: 90px;
-        /* just above back-to-top */
-        width: 80px;
-        /* smaller size for mobile */
-        padding: 8px;
-    }
+  .tally-fixed-badge {
+    display: block;
+    right: 20px;       /* closer to screen edge */
+    bottom: 90px;      /* just above back-to-top */
+    width: 80px;       /* smaller size for mobile */
+    padding: 8px;
+  }
 
-    .tally-fixed-badge img {
-        width: 45px;
-        height: 45px;
-    }
+  .tally-fixed-badge img {
+    width: 45px;
+    height: 45px;
+  }
 
-    .tally-fixed-badge span {
-        font-size: 9px;
-    }
-}
-
-.brand-logo-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background-color: #fff;
-  object-fit: contain;
-  padding: 36px;
-  border: 2px solid #eee;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-@media (max-width: 768px) {
-  .brand-logo-img {
-    width: 130px;
-    height: 130px;
-    padding: 24px;
+  .tally-fixed-badge span {
+    font-size: 9px;
   }
 }
 
