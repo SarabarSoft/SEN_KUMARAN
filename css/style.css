@@ -659,57 +659,49 @@ body.modal-open {
 }
 
 
-/* ---------- Contact Button ---------- */
-.nav-contact {
-    background-color: #224294 !important; /* Normal blue */
-    color: #ffffff !important; /* White text */
-    border-radius: 8px !important;
-    font-weight: 600;
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 6px 14px !important;
-    font-size: 0.9rem;
-    line-height: 1.2;
-    text-align: center;
-    transition: all 0.3s ease;
-    text-decoration: none !important;
-    outline: none !important;
+/* === Compact Call Button — 22px Text, Reduced Height & Width === */
+.nav-item .nav-link.nav-contact,
+.navbar .nav-link.nav-contact,
+.navbar-collapse .nav-link.nav-contact {
+  background-color: #224294 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px !important; /* 🔹 Reduced horizontal padding (was 16px) */
+  font-size: 20px !important;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none !important;
+  outline: none !important;
+  transition: none !important;
+  border: none !important;
+  min-width: auto !important;
 }
 
-/* icon style */
-.nav-contact i {
-    color: #ffffff !important;
-    font-size: 1rem;
-    transition: transform 0.3s ease;
+/* Icon slightly smaller for balance */
+.nav-item .nav-link.nav-contact i,
+.navbar .nav-link.nav-contact i {
+  color: #ffffff !important;
+  font-size: 20px !important;
+  transition: none !important;
+  transform: none !important;
 }
 
-/* ✅ Hover effect — keep icon & text white, only background darkens */
-.nav-contact:hover {
-    background-color: #1b357a !important; /* darker blue */
-    color: #ffffff !important; /* text stays white */
+/* No hover/active/visited color change */
+.nav-item .nav-link.nav-contact:hover,
+.nav-item .nav-link.nav-contact:active,
+.nav-item .nav-link.nav-contact:visited {
+  background-color: #224294 !important;
+  color: #ffffff !important;
 }
 
-.nav-contact:hover i {
-    color: #ffffff !important; /* icon stays white */
-    transform: scale(1.05);
-}
 
-/* ✅ Active (click) state — same look */
-.nav-contact:active {
-    background-color: #182f6a !important; /* slightly darker */
-    color: #ffffff !important;
-}
 
-.nav-contact:active i {
-    color: #ffffff !important;
-}
 
-/* ✅ Visited link should remain white */
-.nav-contact:visited {
-    color: #ffffff !important;
-}
 
 /* ---------- Mobile Responsive ---------- */
 @media (max-width: 991.98px) {
