@@ -599,8 +599,8 @@ body.modal-open {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2px 12px;
-    gap: 4px;
+    padding: 2px 12px;  
+    gap: 4px;           
 }
 
 
@@ -645,7 +645,7 @@ body.modal-open {
     font-family: 'Jost', sans-serif;
     position: relative;
     margin-left: 30px;
-    padding: 10px 0;
+    padding: 10px 0; 
     font-size: 22px;
     font-weight: 600;
     color: var(--dark);
@@ -661,9 +661,9 @@ body.modal-open {
 
 /* ---------- Contact Button ---------- */
 .nav-contact {
-    background-color: #224294 !important; /* Normal blue */
-    color: #ffffff !important; /* White text */
-    border-radius: 8px !important;
+    background-color: #224294 !important; /* Blue background */
+    color: #ffffff !important;            /* White text */
+    border-radius: 8px !important;        /* Smooth corners */
     font-weight: 600;
     display: inline-flex !important;
     align-items: center;
@@ -675,50 +675,25 @@ body.modal-open {
     text-align: center;
     transition: all 0.3s ease;
     text-decoration: none !important;
-    outline: none !important;
 }
 
-/* icon style */
+/* Icon */
 .nav-contact i {
-    color: #ffffff !important;
+    color: #ffffff !important; /* White icon */
     font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
-/* ✅ Hover effect — keep icon & text white, only background darkens */
+/* Hover: keep text white, slightly darker blue background */
 .nav-contact:hover {
-    background-color: #1b357a !important; /* darker blue */
-    color: #ffffff !important; /* text stays white */
+    background-color: #1b357a !important; /* Darker blue */
+    color: #ffffff !important;            /* Keep text white */
+    transform: translateY(-2px);
 }
 
 .nav-contact:hover i {
-    color: #ffffff !important; /* icon stays white */
-    transform: scale(1.05);
-}
-
-/* ✅ Active (click) state — same look */
-.nav-contact:active {
-    background-color: #182f6a !important; /* slightly darker */
-    color: #ffffff !important;
-}
-
-.nav-contact:active i {
-    color: #ffffff !important;
-}
-
-/* ✅ Visited link should remain white */
-.nav-contact:visited {
-    color: #ffffff !important;
-}
-
-/* ---------- Mobile Responsive ---------- */
-@media (max-width: 991.98px) {
-  .nav-item .nav-contact {
-    margin: 8px auto !important;
-    display: flex !important;
-    justify-content: center;
-    border-radius: 10px !important;
-  }
+    color: #ffffff !important;            /* Keep icon white */
+    transform: scale(1.1);
 }
 
 /* ---------- Mobile Responsive ---------- */
@@ -996,57 +971,25 @@ body.modal-open {
 }
 
 .brand-logo-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background-color: #fff;
-    object-fit: contain;
-    padding: 36px;
-    border: 2px solid #eee;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #fff;
+  object-fit: contain;
+  padding: 36px;
+  border: 2px solid #eee;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
-    .brand-logo-img {
-        width: 130px;
-        height: 130px;
-        padding: 24px;
-    }
-}
-
-
-/* .tally-blink-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tally-blink-text span {
-    font-family: 'Jost', 'Open Sans', sans-serif;
-    color: #DC1D25;
-    font-weight: 600;
-    font-size: 0.9rem; 
-    letter-spacing: 0.4px;
-    animation: blinkText 1.5s infinite ease-in-out;
-}
-
-
-@keyframes blinkText {
-    0%, 100% {
-        opacity: 1;
-        color: #DC1D25;
-    }
-    50% {
-        opacity: 0.6;
-    }
-}
-
-@media (max-width: 767.98px) {
-  .tally-blink-text span {
-    font-size: 0.8rem; 
+  .brand-logo-img {
+    width: 130px;
+    height: 130px;
+    padding: 24px;
   }
-} */
+}
+
