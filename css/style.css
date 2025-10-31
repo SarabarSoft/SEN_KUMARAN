@@ -1052,3 +1052,69 @@ body.modal-open {
     font-size: 0.8rem;  /* smaller on mobile */
   }
 }
+
+
+
+/* ===== Navbar Mobile Fix ===== */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%; /* opens right below brand section */
+    left: 0;
+    width: 100%;
+    background: #fff; /* white background for clarity */
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 20px;
+    text-align: left;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #2878EB; /* your theme color */
+  }
+
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+
+  .navbar {
+    position: relative;
+  }
+}
+/* ===== Responsive Call Button (Mobile View) ===== */
+@media (max-width: 991px) {
+  .navbar-collapse .nav-contact {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #224294 !important; /* your theme blue */
+    color: #fff !important;
+    font-size: 22px !important;
+    font-weight: 600;
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    width: 85%;           /* smaller width, centered */
+    margin: 10px auto;    /* center horizontally */
+    text-align: center;
+  }
+
+  .navbar-collapse .nav-contact i {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  .navbar-collapse .nav-contact:hover {
+    background-color: #1b357a !important; /* darker on hover */
+    color: #fff !important;
+  }
+}
+
+
+
