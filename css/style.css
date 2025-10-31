@@ -1018,37 +1018,35 @@ body.modal-open {
     }
 }
 
-/* 🔹 Blinking Tally Authorized Partners Text */
-.tally-blink-text {
+
+/* .tally-blink-text {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .tally-blink-text span {
-    font-family: 'Jost', 'Open Sans', sans-serif; /* match your website font */
-    color: #DC1D25; /* theme red */
+    font-family: 'Jost', 'Open Sans', sans-serif;
+    color: #DC1D25;
     font-weight: 600;
-    font-size: 0.9rem; /* ⬅️ reduced size */
+    font-size: 0.9rem; 
     letter-spacing: 0.4px;
     animation: blinkText 1.5s infinite ease-in-out;
 }
 
-/* Smooth blinking animation */
+
 @keyframes blinkText {
     0%, 100% {
         opacity: 1;
-        color: #DC1D25; /* red */
+        color: #DC1D25;
     }
     50% {
         opacity: 0.6;
-        color: #224294; /* blue */
     }
 }
 
-/* 🔹 Mobile responsive adjustments */
 @media (max-width: 767.98px) {
   .tally-blink-text span {
-    font-size: 0.8rem;  /* smaller on mobile */
+    font-size: 0.8rem; 
   }
-}
+} */
